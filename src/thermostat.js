@@ -21,7 +21,7 @@ Thermostat.prototype.down = function (change) {
 this.temperature -= change;
   this.isUsage();
   if (this.temperature < this.min) {
-    this.tempreture = this.min;
+    this.temperature = this.min;
       this.isUsage();
   }
 };
