@@ -35,4 +35,23 @@ describe ('Thermostat', function(){
    expect(thermostat.temperature).toEqual(32);
  });
 
+ it ('resets temp back to 20', function(){
+   thermostat.up(2);
+   thermostat.reset();
+   expect(thermostat.temperature).toEqual(20);
+ });
+ it('returns low usage if temp < 18', function(){
+  thermostat.down(3);
+  thermostat.isUsage();
+  expect(thermostat.usage).toEqual('low-usage');
+ });
+ it('returns high usage if temp > 24', function(){
+  thermostat.up(6);
+  thermostat.isUsage();
+  expect(thermostat.usage).toEqual('high-usage');
+ });
+ it('returns medium usage if temp > 17 but < 25', function(){
+  thermostat.isUsage();
+  expect(thermostat.usage).toEqual('medium-usage');
+ })
 });
