@@ -29,6 +29,12 @@ this.temperature -= change;
 Thermostat.prototype.powerSaverOff = function () {
   this.powerSaver = false;
 };
+Thermostat.prototype.powerSaverOn = function () {
+  this.powerSaver = true;
+  if(this.temperature > 24){
+    this.temperature = 24;
+  }
+};
 
 Thermostat.prototype.reset = function() {
   this.temperature = 20;
