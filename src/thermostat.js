@@ -7,17 +7,22 @@ function Thermostat(){
 
 Thermostat.prototype.up = function (change) {
   this.temperature += change;
+    this.isUsage();
   if (this.powerSaver === true && this.temperature > 25) {
     this.temperature = 25;
+    this.isUsage();
   }
   else if (this.powerSaver === false && this.temperature > 32) {
     this.temperature = 32;
+      this.isUsage();
   }
 };
 Thermostat.prototype.down = function (change) {
 this.temperature -= change;
+  this.isUsage();
   if (this.temperature < this.min) {
     this.tempreture = this.min;
+      this.isUsage();
   }
 };
 
