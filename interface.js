@@ -39,7 +39,7 @@ $(document).ready(function(){
  $.get(url + token + units, function(data) {
    $('#current-temperature').text(data.main.temp);
  });
-
+};
  displayWeather('London');
 
  $('#select-city').submit(function(event) {
