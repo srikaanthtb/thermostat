@@ -45,5 +45,7 @@ Thermostat.prototype.isUsage = function() {
     this.usage = 'low-usage';
   }else if(this.temperature > 24){
     this.usage = 'high-usage';
+  } else {
+    this.usage = 'medium-usage';
   }
 };
